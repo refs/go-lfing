@@ -46,5 +46,6 @@ func printStringFromUnderlyingArray(ptr uintptr) {
 	// and dereferencing it (https://www.golang-book.com/books/intro/8) knowing the type
 	// this step bypases golang type safety.
 	// void warranty. don't do.
-	fmt.Println(*(*string)(p))
+	v := *(*string)(p)
+	fmt.Printf("[1]\ncontents: %v\naddress: %v\n---\n", v, &v)
 }
